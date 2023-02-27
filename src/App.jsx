@@ -25,7 +25,9 @@ const App = () => {
 
   const toggleTask = (task) => {
     setTasksItems(
-      tasksItems.map((t) => (t.name == task.name ? { ...t, done: !t.done } : t))
+      tasksItems.map((t) =>
+        t.name === task.name ? { ...t, done: !t.done } : t
+      )
     );
   };
 
@@ -40,16 +42,18 @@ const App = () => {
 
   return (
     <div>
-      <TaskCreator createNewTask={createTask} />
-      <TaskTable tasks={tasksItems} toggleTask={toggleTask} />
-      <div>
-        <button onClick={handleDelete}>Limpiar tareas hechas</button>
+      <div className="container">
+        <TaskCreator createNewTask={createTask} />
+        <TaskTable tasks={tasksItems} toggleTask={toggleTask} />
+        <div>
+          <button onClick={handleDelete}>Limpiar tareas hechas</button>
+        </div>
+        <TaskTable
+          tasks={tasksItems}
+          toggleTask={toggleTask}
+          showCompleted={true}
+        />
       </div>
-      <TaskTable
-        tasks={tasksItems}
-        toggleTask={toggleTask}
-        showCompleted={true}
-      />
     </div>
   );
 };
