@@ -10,14 +10,15 @@ const TaskCreator = ({ createNewTask }) => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="input-group mb-3">
         <input
+          className="form-control formInput"
           type="text"
           placeholder="Ingresa una nueva tarea"
           value={newTaskName}
           onChange={(e) => setnewTaskName(e.target.value)}
         />
-        <button>Guardar tarea</button>
+        <button className="btn btn-outline-primary">Guardar</button>
       </form>
     </div>
   );

@@ -1,0 +1,35 @@
+#root {
+  padding: 8px 8px 8px 8px;
+}
+body {
+  background-color: #e0e0e0;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.formInput:hover {
+  border-color: #007bff;
+}
+
+.btn-delete {
+  height: 40px;
+}
+
+.contentCard {
+  min-height: 400px;
+}
+
+.todoCard {
+  min-height: 300px;
+}
+
+.todoTable {
+  min-height: 300px;
+}
+
+@media screen and (min-width: 768px) {
+  .contentCard {
+    width: 600px;
+  }
+}

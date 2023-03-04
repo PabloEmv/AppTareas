@@ -1,21 +1,32 @@
 import React from "react";
 import TaskRow from "./TaskRow";
 
-const TaskTable = ({ tasks, toggleTask, showCompleted = false }) => {
+const TaskTable = ({
+  title,
+  tasks,
+  toggleTask,
+  showCompleted = false,
+  clearTask,
+}) => {
   const taskTableRows = (doneValue) => {
     return tasks
       .filter((task) => task.done === doneValue)
 
       .map((task) => (
-        <TaskRow task={task} key={task.name} toggleTask={toggleTask} />
+        <TaskRow
+          task={task}
+          key={task.name}
+          toggleTask={toggleTask}
+          clearTask={clearTask}
+        />
       ));
   };
 
   return (
-    <table>
+    <table className="table table-striped overflow-auto">
       <thead>
         <tr>
-          <th>Tareas</th>
+          <th>{title}</th>
         </tr>
       </thead>
       <tbody>{taskTableRows(showCompleted)}</tbody>
