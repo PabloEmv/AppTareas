@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import TaskCreator from "./components/TaskCreator";
 import TaskTable from "./components/TaskTable";
 
@@ -65,8 +64,8 @@ const App = () => {
           </div>
         </div>
         <div>
-          <div className="my-4">
-            <button onClick={handleDelete} className="btn btn-secondary">
+          <div className="my-4 text-center">
+            <button onClick={handleDelete} className="btn btn-secondary mx-auto">
               Limpiar tareas hechas
             </button>
           </div>
